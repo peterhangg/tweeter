@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css"type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
  
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -39,8 +40,13 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas numquam soluta mollitia reiciendis natus dolor dolores nam. Debitis, soluta omnis eaque est autem repellat facilis neque exercitationem placeat ipsum corporis!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae vitae necessitatibus, voluptatem perferendis voluptatibus odit eos delectus exercitationem excepturi quibusdam dolor ex quae officiis itaque quam repellendus, officia a assumenda!</p>
+      <section class="new-tweet">
+        <form method="POST" action="/tweets">
+          <textarea class="tweet-box" name="text" placeholder="What are you humming about?"></textarea>
+          <input class="tweet-button" type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
     </main>
 
   </body>
