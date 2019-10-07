@@ -1,0 +1,21 @@
+#nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  z-index: 1000;
+  background-color: #4056A1;
+  color: #ffffff;
+  font-family: 'Bungee', sans-serif;
+  font-size: 35px;
+  padding: 1.5em;
+}
+
+.write-tweet {
+  float: right;
+  z-index: 1;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
