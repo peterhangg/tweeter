@@ -14,8 +14,16 @@
   color: white;
   border: none;
   background-color:#233567;
-  padding: 3px 6px;
+  padding: 5px 8px;
   margin-top: 10px;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+.tweet-button:hover {
+  background-color: white;
+  color: black;
+  transition-duration: 0.4s;
 }
 .counter {
   float: right;
