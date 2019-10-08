@@ -40,7 +40,7 @@ article header {
   opacity: 0;
 }
 
-.tweet {
+.tweet-text {
   flex-basis: 100%;
   border-bottom: 4px solid black;
   margin-top: 20px;
@@ -57,6 +57,8 @@ article header {
 footer span {
   flex-basis: 50%;
   margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .icons {
