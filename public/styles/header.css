@@ -18,3 +18,7 @@ header {
   margin-top: auto;
   color: #ffffff;
 }
+
+#username span {
+  font-weight: lighter;
+}

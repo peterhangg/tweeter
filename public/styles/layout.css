@@ -23,7 +23,7 @@ body {
 
 .container {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
