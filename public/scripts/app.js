@@ -24,40 +24,51 @@ const data = [
   }
 ]
 
-$( document ).ready(function() {
-  const createTweetElement = (obj) => {
-    let html = 
-    `<article>
-      <header>
-        <div class="head-name">
-          <img src="${obj.user.avatars}"/>
-          <span>${obj.user.name}</span>
-        </div>
-        <h5 class="head-username">${obj.user.handle}</h5>
-      </header>
-      <div class="tweet-text">
-        <h4>${obj.content.text}</h4>
+const createTweetElement = (obj) => {
+  let html = 
+  `<article>
+    <header>
+      <div class="head-name">
+        <img src="${obj.user.avatars}"/>
+        <span>${obj.user.name}</span>
       </div>
-      <footer>
-        <span>${new Date(obj.created_at).toDateString()}</span>
-        <div class="icons">
-          <i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-heart"></i>
-        </div>
-      </footer>
-    </article>`;
-    return $(html);
+      <h5 class="head-username">${obj.user.handle}</h5>
+    </header>
+    <div class="tweet-text">
+      <h4>${obj.content.text}</h4>
+    </div>
+    <footer>
+      <span>${new Date(obj.created_at).toDateString()}</span>
+      <div class="icons">
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-heart"></i>
+      </div>
+    </footer>
+  </article>`;
+  return $(html);
+};
+
+const renderTweets = function(tweets) {
+  for(let tweet of tweets) {
+    const $tweet = createTweetElement(tweet);
+    $('#tweets-container').append($tweet);
   };
   
-  const renderTweets = function(tweets) {
-    for(let tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
-    };
-    
-  };
+};
 
+$( document ).ready(function() {
   renderTweets(data);
 });
 
+$(function() {
+  $("form").on("submit", function(event) {
+    console.log("form has been submitted, ajax call....");
+    event.preventDefault();
+    $.ajax("/tweets",{ method: "POST", data: $("form").serialize()
+    })
+    .then((data) => {
+      console.log("sucess ajax!", data);
+    });
+  });
+});

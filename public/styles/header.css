@@ -1,6 +1,6 @@
 #profile {
   position: relative;
-  height: 400px;
+  height: 90vh;
   width: 100%;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,80,238,1) 45%, rgba(0,212,255,1) 100%);
   /* background-color: #e09500;
@@ -11,6 +11,7 @@
   display: block;
   margin: auto;
   margin-top: 120px;
+  padding-top: 120px;
 }
 
 #username h2 {
