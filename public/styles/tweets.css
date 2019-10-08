@@ -46,6 +46,9 @@ article header {
   margin-top: 20px;
 }
 
+.tweet-text h4 {
+  margin-left: 20px;
+}
 #tweets-container footer {
   display: flex;
   flex-direction: row;

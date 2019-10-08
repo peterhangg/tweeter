@@ -36,7 +36,7 @@ $( document ).ready(function() {
         <h5 class="head-username">${obj.user.handle}</h5>
       </header>
       <div class="tweet-text">
-      ${obj.content.text}
+        <h4>${obj.content.text}</h4>
       </div>
       <footer>
         <span>${new Date(obj.created_at).toDateString()}</span>
