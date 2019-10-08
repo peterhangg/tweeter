@@ -1,4 +1,4 @@
-#tweet-container {
+#tweets-container {
   margin-top: 2em;
 }
 
@@ -26,6 +26,7 @@ article header {
 .head-name span {
   padding-top: 35px;
 }
+
 .head-name img {
   border-radius: 50%;
   margin-right: 15px;
@@ -36,7 +37,7 @@ article header {
   flex-basis: 50%;
   display: flex;
   justify-content: flex-end;
-  visibility: hidden;
+  opacity: 0;
 }
 
 .tweet {
@@ -45,7 +46,7 @@ article header {
   margin-top: 20px;
 }
 
-#tweet-container footer {
+#tweets-container footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -75,6 +76,6 @@ article:hover {
 }
 
 article:hover .head-username {
-  visibility: visible;
+  opacity: 1;
   transition-duration: 0.4s;
 }
