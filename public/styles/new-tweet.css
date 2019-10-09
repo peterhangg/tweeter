@@ -34,3 +34,12 @@
   font-family: 'Bungee', sans-serif;
   margin-top: 10px;
 }
+
+.error-message {
+  margin-top: 40px;
+  border: 2px solid red;
+  border-radius: 5px;
+  align-items: center;
+  text-align: center;
+  color: red;
+}

@@ -42,13 +42,15 @@ const renderTweets = function(tweets) {
 
 // Ajax request to to post tweets /tweets
 const postTweets = function() {
+  $(".error-message").hide();
   $("form").on("submit", function(event) {
-    console.log("form has been submitted, ajax call....");
     event.preventDefault();
     if(!$(".tweet-box").val()) {
-      alert("Cannot submit empty tweets!");
+      $(".error-message").text("Cannot submit tweet an empty tweet!");
+      $(".error-message").slideDown();
     } else if ($(".tweet-box").val().length > 140) {
-      alert("Cannot submit tweet over 140 characters!");
+      $(".error-message").text("Cannot submit tweet over 140 characters!");
+      $(".error-message").slideDown();
     } else {
       $.ajax({ 
         method: "POST", 
@@ -56,6 +58,7 @@ const postTweets = function() {
         data: $("form").serialize()
       })
       .then(() => {
+        $(".error-message").slideUp();
         loadTweets();
         $("form").trigger("reset");
         $(".counter").text(140);
