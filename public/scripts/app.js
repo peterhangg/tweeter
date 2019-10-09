@@ -29,7 +29,7 @@ const renderTweets = function(tweets) {
   $('#tweets-container').empty();
   for(let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   };
 };
 
@@ -50,6 +50,7 @@ const postTweets = function() {
       .then(() => {
         loadTweets();
         $(".tweet-box").val("");
+        $(".counter").text(140);
       });
     }
   });
