@@ -30,11 +30,13 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-footer {
-  display: flex;
-}
-
  #scroll-up {
   color: orange;
-  margin-left: auto;
+  position: fixed;
+  top: 90vh;
+  left: 95vw;
+ }
+
+ #scroll-up:hover {
+   color: red;
  }
