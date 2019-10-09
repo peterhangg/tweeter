@@ -24,17 +24,17 @@
 }
 
 #arrow-icon {
-  -webkit-animation:bounce 1s infinite;
-  animation: action 1s infinite  alternate;
+  animation: action 1s infinite  linear, changeColor 1s infinite linear
 }
 
-@-webkit-keyframes action {
+@keyframes action { 
   0% { transform: translateY(0); }
   100% { transform: translateY(10px); }
 }
-@keyframes action {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(10px); }
+
+@keyframes changeColor {
+  0% { color: orange }
+  100% { color: red }
 }
 
 #arrow-icon:hover {

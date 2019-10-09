@@ -13,4 +13,9 @@ $(document).ready(function() {
       $(".counter").css("color", "green");
     }
   });
+
+  $("#scroll-up").on("click", function() {
+    $(window).scrollTop(0);
+  });
 });
+

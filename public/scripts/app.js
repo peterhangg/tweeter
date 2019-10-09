@@ -11,7 +11,7 @@ const createTweetElement = (obj) => {
   `<article>
     <header>
       <div class="head-name">
-        <img src="${obj.user.avatars}"/>
+        <img src="${escape(obj.user.avatars)}"/>
         <span>${escape(obj.user.name)}</span>
       </div>
       <h5 class="head-username">${escape(obj.user.handle)}</h5>
@@ -87,6 +87,7 @@ $( document ).ready(function() {
     });
   });
   
+  $("form").hide();
   postTweets();
   loadTweets();
 });
