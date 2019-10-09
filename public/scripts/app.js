@@ -37,13 +37,19 @@ const postTweets = function() {
   $("form").on("submit", function(event) {
     console.log("form has been submitted, ajax call....");
     event.preventDefault();
-    $.ajax("/tweets",{ 
-      method: "POST", 
-      data: $("form").serialize()
-    })
-    .then(() => {
-      loadTweets();
-    });
+    if(!$(".tweet-box").val()) {
+      alert("Cannot submit empty tweets!");
+    } else if ($(".tweet-box").val().length > 140) {
+      alert("Cannot submit tweet over 140 characters!");
+    } else {
+      $.ajax("/tweets",{ 
+        method: "POST", 
+        data: $("form").serialize()
+      })
+      .then(() => {
+        loadTweets();
+      });
+    }
   });
 };
 
