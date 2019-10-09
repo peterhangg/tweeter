@@ -43,8 +43,9 @@ const postTweets = function() {
     } else if ($(".tweet-box").val().length > 140) {
       alert("Cannot submit tweet over 140 characters!");
     } else {
-      $.ajax("/tweets",{ 
+      $.ajax({ 
         method: "POST", 
+        url: "/tweets",
         data: $("form").serialize()
       })
       .then(() => {
@@ -58,7 +59,10 @@ const postTweets = function() {
 
 // Ajax request to retrieve tweets from /tweets
 const loadTweets = function() {
-  $.ajax("/tweets",{ method: "GET" })
+  $.ajax({ 
+    method: "GET",
+    url: "/tweets"
+  })
   .then((tweets) => {
     console.log(tweets);
     renderTweets(tweets);
