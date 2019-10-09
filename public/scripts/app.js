@@ -50,7 +50,7 @@ const postTweets = function() {
       })
       .then(() => {
         loadTweets();
-        $(".tweet-box").val("");
+        $("form").trigger("reset");
         $(".counter").text(140);
       });
     }
