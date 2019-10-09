@@ -62,6 +62,8 @@ const postTweets = function() {
         loadTweets();
         $("form").trigger("reset");
         $(".counter").text(140);
+        $(".write-tweet").show();
+        $("form").hide();
       });
     }
   });
@@ -84,6 +86,7 @@ $( document ).ready(function() {
     event.preventDefault();
     $("form").slideToggle("fast", function() {
       $("textarea").focus();
+      $(".write-tweet").hide();
     });
   });
   

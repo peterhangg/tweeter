@@ -35,6 +35,7 @@ body {
   position: fixed;
   top: 90vh;
   left: 95vw;
+  display: none;
  }
 
  #scroll-up:hover {

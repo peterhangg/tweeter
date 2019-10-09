@@ -17,5 +17,14 @@ $(document).ready(function() {
   $("#scroll-up").on("click", function() {
     $(window).scrollTop(0);
   });
+
 });
 
+$(document).scroll(function() {
+  let y = $(this).scrollTop();
+  if(y > 400) {
+    $("#scroll-up").fadeIn();
+  } else {
+    $("#scroll-up").fadeOut();
+  }
+});
