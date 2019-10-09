@@ -1,29 +1,4 @@
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
+// Create tweet object literal
 const createTweetElement = (obj) => {
   let html = 
   `<article>
@@ -49,26 +24,40 @@ const createTweetElement = (obj) => {
   return $(html);
 };
 
+//Renders tweets and appends it to our tweet container
 const renderTweets = function(tweets) {
   for(let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   };
-  
 };
 
-$( document ).ready(function() {
-  renderTweets(data);
-});
-
-$(function() {
+// Ajax request to to post tweets /tweets
+const postTweets = function() {
   $("form").on("submit", function(event) {
     console.log("form has been submitted, ajax call....");
     event.preventDefault();
-    $.ajax("/tweets",{ method: "POST", data: $("form").serialize()
+    $.ajax("/tweets",{ 
+      method: "POST", 
+      data: $("form").serialize()
     })
-    .then((data) => {
-      console.log("sucess ajax!", data);
+    .then(() => {
+      loadTweets();
     });
   });
+};
+
+// Ajax request to retrieve tweets from /tweets
+const loadTweets = function() {
+  $.ajax("/tweets",{ method: "GET" })
+  .then((tweets) => {
+    console.log(tweets);
+    renderTweets(tweets);
+  });
+};
+  
+$( document ).ready(function() {
+  postTweets();
+  loadTweets();
 });
+
