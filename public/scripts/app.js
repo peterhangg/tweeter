@@ -26,6 +26,7 @@ const createTweetElement = (obj) => {
 
 //Renders tweets and appends it to our tweet container
 const renderTweets = function(tweets) {
+  $('#tweets-container').empty();
   for(let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
@@ -48,6 +49,7 @@ const postTweets = function() {
       })
       .then(() => {
         loadTweets();
+        $(".tweet-box").val("");
       });
     }
   });
