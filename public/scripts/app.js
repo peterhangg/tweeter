@@ -1,3 +1,10 @@
+// Preventing XSS with Escaping
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 // Create tweet object literal
 const createTweetElement = (obj) => {
   let html = 
@@ -5,15 +12,15 @@ const createTweetElement = (obj) => {
     <header>
       <div class="head-name">
         <img src="${obj.user.avatars}"/>
-        <span>${obj.user.name}</span>
+        <span>${escape(obj.user.name)}</span>
       </div>
-      <h5 class="head-username">${obj.user.handle}</h5>
+      <h5 class="head-username">${escape(obj.user.handle)}</h5>
     </header>
     <div class="tweet-text">
-      <h4>${obj.content.text}</h4>
+      <h4>${escape(obj.content.text)}</h4>
     </div>
     <footer>
-      <span>${new Date(obj.created_at).toDateString()}</span>
+      <span>${escape(new Date(obj.created_at).toDateString())}</span>
       <div class="icons">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
