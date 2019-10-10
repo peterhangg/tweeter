@@ -3,13 +3,13 @@ const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 // Get tweet timestamp
 const timestamp = (ms) => {
-  const oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-  const oneHour = 60*60*1000;
-  const oneMinute = 60*1000;
+  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  const oneHour = 60 * 60 * 1000;
+  const oneMinute = 60 * 1000;
   const seconds = 1000;
   const differenceMs = new Date() - ms;
 
@@ -26,7 +26,7 @@ const timestamp = (ms) => {
 
 // Create tweet object literal
 const createTweetElement = (obj) => {
-  let html = 
+  let html =
   `<article>
     <header>
       <div class="head-name">
@@ -53,10 +53,10 @@ const createTweetElement = (obj) => {
 //Renders tweets and appends it to our tweet container
 const renderTweets = function(tweets) {
   $('#tweets-container').empty();
-  for(let tweet of tweets) {
+  for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet);
-  };
+  }
 };
 
 // Ajax request to to post tweets /tweets
@@ -64,43 +64,43 @@ const postTweets = function() {
   $(".error-message").hide();
   $("form").on("submit", function(event) {
     event.preventDefault();
-    if(!$(".tweet-box").val()) {
+    if (!$(".tweet-box").val()) {
       $(".error-message").text("Cannot submit tweet an empty tweet!");
       $(".error-message").slideDown();
     } else if ($(".tweet-box").val().length > 140) {
       $(".error-message").text("Cannot submit tweet over 140 characters!");
       $(".error-message").slideDown();
     } else {
-      $.ajax({ 
-        method: "POST", 
+      $.ajax({
+        method: "POST",
         url: "/tweets",
         data: $("form").serialize()
       })
-      .then(() => {
-        $(".error-message").slideUp();
-        loadTweets();
-        $("form").trigger("reset");
-        $(".counter").text(140);
-        $(".write-tweet").fadeIn();
-        $("form").hide();
-      });
+        .then(() => {
+          $(".error-message").slideUp();
+          loadTweets();
+          $("form").trigger("reset");
+          $(".counter").text(140);
+          $(".write-tweet").fadeIn();
+          $("form").hide();
+        });
     }
   });
 };
 
 // Ajax request to retrieve tweets from /tweets
 const loadTweets = function() {
-  $.ajax({ 
+  $.ajax({
     method: "GET",
     url: "/tweets"
   })
-  .then((tweets) => {
-    console.log(tweets);
-    renderTweets(tweets);
-  });
+    .then((tweets) => {
+      console.log(tweets);
+      renderTweets(tweets);
+    });
 };
 
-$( document ).ready(function() {
+$(document).ready(function() {
   $("#arrow-icon").on("click", function(event) {
     event.preventDefault();
     $("form").slideToggle("fast", function() {

@@ -4,7 +4,7 @@ $(document).ready(function() {
     let length = $(this).val().length;
     let charCounter = 140 - length;
     $(".counter").text(charCounter);
-    if(charCounter < 0) {
+    if (charCounter < 0) {
       $(".counter").css("color", "red");
     } else {
       $(".counter").css("color", "green");
@@ -19,7 +19,7 @@ $(document).ready(function() {
 // hide/show scroll button
 $(document).scroll(function() {
   let y = $(this).scrollTop();
-  if(y > 400) {
+  if (y > 400) {
     $("#scroll-top").fadeIn();
     $("nav").fadeOut();
   } else {
