@@ -1,7 +1,7 @@
 #nav-bar {
   position: fixed;
   top: 0;
-  height: 120px;
+  height: 100px;
   width: 100%;
   z-index: 1000;
   padding: 1.5em;

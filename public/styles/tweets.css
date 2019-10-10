@@ -33,8 +33,6 @@ article header {
   border-radius: 50%;
   margin-right: 15px;
   display: inline-block;
-  width: 3em;
-  height: 4em;
   transition-duration: 0.4s;
 }
 
