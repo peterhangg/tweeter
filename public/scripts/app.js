@@ -5,6 +5,25 @@ const escape =  function(str) {
   return div.innerHTML;
 }
 
+// Get tweet timestamp
+const timestamp = (ms) => {
+  const oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+  const oneHour = 60*60*1000;
+  const oneMinute = 60*1000;
+  const seconds = 1000;
+  const differenceMs = new Date() - ms;
+
+  if (differenceMs >= oneDay) {
+    return `${Math.floor(differenceMs / oneDay)} days ago`;
+  } else if (differenceMs >= oneHour) {
+    return `${Math.floor(differenceMs / oneHour)} hours ago`;
+  } else if (differenceMs >= oneMinute) {
+    return `${Math.floor(differenceMs / oneMinute)} minutes ago`;
+  } else {
+    return `${Math.floor(differenceMs / seconds)} seconds ago`;
+  }
+};
+
 // Create tweet object literal
 const createTweetElement = (obj) => {
   let html = 
@@ -20,7 +39,7 @@ const createTweetElement = (obj) => {
       <h4>${escape(obj.content.text)}</h4>
     </div>
     <footer>
-      <span>${escape(new Date(obj.created_at).toDateString())}</span>
+      <span>${escape(timestamp(obj.created_at))}</span>
       <div class="icons">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -62,7 +81,7 @@ const postTweets = function() {
         loadTweets();
         $("form").trigger("reset");
         $(".counter").text(140);
-        $(".write-tweet").show();
+        $(".write-tweet").fadeIn();
         $("form").hide();
       });
     }
@@ -86,7 +105,7 @@ $( document ).ready(function() {
     event.preventDefault();
     $("form").slideToggle("fast", function() {
       $("textarea").focus();
-      $(".write-tweet").hide();
+      $(".write-tweet").fadeOut();
     });
   });
   
