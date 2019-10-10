@@ -1,9 +1,6 @@
 $(document).ready(function() {
-  console.log("Testing......");
+  // Styling on whether tweet char count is valid
   $(".tweet-box").on("input", function() {
-    // console.log("key presses!");
-    // console.log(this);
-    // console.log($(this));
     let length = $(this).val().length;
     let charCounter = 140 - length;
     $(".counter").text(charCounter);
@@ -13,18 +10,20 @@ $(document).ready(function() {
       $(".counter").css("color", "green");
     }
   });
-
-  $("#scroll-up").on("click", function() {
+  // handler on button to scroll to top of page
+  $("#scroll-top").on("click", function() {
     $(window).scrollTop(0);
   });
 
 });
-
+// hide/show scroll button
 $(document).scroll(function() {
   let y = $(this).scrollTop();
   if(y > 400) {
-    $("#scroll-up").fadeIn();
+    $("#scroll-top").fadeIn();
+    $("nav").fadeOut();
   } else {
-    $("#scroll-up").fadeOut();
+    $("#scroll-top").fadeOut();
+    $("nav").show();
   }
 });

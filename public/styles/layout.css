@@ -32,15 +32,15 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- #scroll-up {
-  color: orange;
+ #scroll-top {
+  color: #183661;
   position: fixed;
-  top: 90vh;
-  left: 95vw;
+  top: 92vh;
+  left: 90vw;
   display: none;
  }
 
- #scroll-up:hover {
+ #scroll-top:hover {
    color: red;
  }
 
@@ -62,4 +62,12 @@ body {
     width: 90%;
     margin-top: 3em;
   }
+
+  #scroll-top {
+    color: #183661;
+    position: fixed;
+    top: 90vh;
+    left: 95vw;
+    display: none;
+   }
 }

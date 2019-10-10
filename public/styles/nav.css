@@ -1,7 +1,10 @@
 #nav-bar {
   position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   top: 0;
-  height: 100px;
+  height: 120px;
   width: 100%;
   z-index: 1000;
   padding: 1.5em;
@@ -10,9 +13,6 @@
   background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
   color: #ffffff;
   font-family: 'Bungee', sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .write-tweet {
