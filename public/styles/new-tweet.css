@@ -1,4 +1,12 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .tweet-box {
+  flex-basis: 100%;
   width: 100%;
   border: none;
   border-bottom: 3px solid black;
@@ -11,6 +19,7 @@
 }
 
 .tweet-button {
+  flex-basis: 20%;
   font-family: 'Bungee', sans-serif;
   color: white;
   border: none;
@@ -28,18 +37,21 @@
 }
 
 .counter {
-  float: right;
+  flex-basis: 20%;
   font-weight: 700;
   font-size: 25px;
   font-family: 'Bungee', sans-serif;
   margin-top: 10px;
+  text-align: right;
 }
 
 .error-message {
-  margin-top: 40px;
+  flex-basis: 100%;
+  margin-top: 5rem;
   border: 2px solid red;
   border-radius: 5px;
   align-items: center;
   text-align: center;
   color: red;
 }
+

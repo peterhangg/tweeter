@@ -3,7 +3,6 @@
 }
 
 article {
-  width: 90%;
   margin: 30px auto;
   border: 4px solid black;
   padding: 20px;
@@ -52,6 +51,7 @@ article header {
 .tweet-text h4 {
   margin-left: 20px;
 }
+
 #tweets-container footer {
   display: flex;
   flex-direction: row;
@@ -99,4 +99,9 @@ article:hover .head-name img {
   transition-duration: 0.4s;
 }
 
+@media only screen and (min-width: 1024px) {
+  .container section {
+    margin-top: 3em;
+  }
+}
 

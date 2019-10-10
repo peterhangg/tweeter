@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -40,29 +41,27 @@
     <header id="profile">
       <div id="avatar">
         <img src="/images/profile-hex.png" />
-      </div>
-      <div id="username">
-        <h2>Peter <span>Hang</span></h2>
+        <h2 id="username">Peter <span>Hang</span></h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div class="error-message"></div>
       <section class="new-tweet">
         <form method="POST" action="/tweets">
+          <div class="error-message"></div>
           <textarea class="tweet-box" name="text" placeholder="What are you humming about?"></textarea>
           <input class="tweet-button" type="submit" value="Tweet" />
           <span class="counter">140</span>
         </form>
       </section>
-    </main>
 
-    <section id="tweets-container">
-      <!-- Inject tweets from app.js -->
-    </section>
-    <button>
-        <i id="scroll-up" class="fas fa-arrow-circle-up fa-3x"></i>
-    </button>
+      <section id="tweets-container">
+        <!-- Inject tweets from app.js -->
+      </section>
+    </main>
+   
+      <i id="scroll-up" class="fas fa-arrow-circle-up fa-3x"></i>
+
   </body>
 </html>

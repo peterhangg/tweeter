@@ -1,23 +1,33 @@
 #profile {
-  height: 475px; 
+  height: 500px; 
   padding-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,80,238,1) 45%, rgba(0,212,255,1) 100%);
-  /* background-color: #e09500;
-  background-image: url(http://www.transparenttextures.com/patterns/3px-tile.png); */
+  justify-content: center;
+  background-color: #183661;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
 }
 
 #avatar img {
  margin: 0 auto;
 }
 
-#username h2 {
+#username {
   color: #ffffff;
+  text-align: center;
 }
 
 #username span {
   font-weight: lighter;
+}
+
+@media only screen and (min-width: 1024px) {
+  #profile {
+    flex-basis: 30%;
+    margin-left: 3rem;
+    margin-top: 9rem;
+    border: 1px transparent #183661;
+    border-radius: 10px;
+  }
 }
