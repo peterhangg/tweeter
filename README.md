@@ -7,7 +7,7 @@ This repository is the starter code for the project: Students will fork and clon
 #### Desktop view
 !["Website"](https://github.com/peterhangg/tweeter/blob/master/doc/desktop.png)
 #### Tablet view
-!["tablet view"](https://github.com/peterhangg/tweeter/blob/master/doc/desktop.png)
+!["tablet view"](https://github.com/peterhangg/tweeter/blob/master/doc/tablet.png)
 
 ## Getting Started
 
