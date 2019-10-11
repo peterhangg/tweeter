@@ -11,9 +11,9 @@ form {
   border: none;
   border-bottom: 3px solid black;
   background-color: #f4f1ec;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1rem;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 2rem;
   margin-top: 100px;
   resize: none;
   overflow: hidden;

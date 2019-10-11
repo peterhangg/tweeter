@@ -124,7 +124,7 @@ $(document).ready(function() {
   $("#scroll-top").on("click", function() {
     $(window).scrollTop(0);
   });
-
+  
   $("form").hide();
   postTweets();
   loadTweets();
