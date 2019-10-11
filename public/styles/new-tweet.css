@@ -16,6 +16,7 @@ form {
   line-height: 1rem;
   margin-top: 100px;
   resize: none;
+  overflow: hidden;
 }
 
 .tweet-button {
