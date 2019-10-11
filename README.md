@@ -2,6 +2,10 @@
 
 Tweeter is a simple, single-page Twitter clone. This repository includes starter code from the team at Lighthouse labs. This project provides fundamentals in learning HTML, CSS, JS, jQuery, AJAX, Node and Express. 
 
+#### Creating a tweet
+!["Post tweet"](https://github.com/peterhangg/tweeter/blob/master/doc/tweet.gif)
+#### Scroll to top of page
+!["Scroll to top"](https://github.com/peterhangg/tweeter/blob/master/doc/scroll.gif)
 #### Desktop view
 !["Website"](https://github.com/peterhangg/tweeter/blob/master/doc/desktop.png)
 #### Tablet view
