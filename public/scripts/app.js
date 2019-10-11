@@ -99,6 +99,23 @@ const loadTweets = function() {
     });
 };
 
+// handler on button to scroll to top of page
+$("#scroll-top").on("click", function() {
+  $(window).scrollTop(0);
+});
+
+// hide/show scroll button
+$(document).scroll(function() {
+  let y = $(this).scrollTop();
+  if (y > 400) {
+    $("#scroll-top").fadeIn();
+    $("nav").fadeOut();
+  } else {
+    $("#scroll-top").fadeOut();
+    $("nav").show();
+  }
+});
+
 $(document).ready(function() {
   $("#arrow-icon").on("click", function(event) {
     event.preventDefault();
