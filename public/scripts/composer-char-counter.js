@@ -8,6 +8,7 @@ $(document).ready(function() {
       $(".counter").css("color", "red");
     } else {
       $(".counter").css("color", "green");
+      $(".error-message").slideUp();
     }
   });
   // handler on button to scroll to top of page

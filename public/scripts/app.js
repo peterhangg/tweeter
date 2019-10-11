@@ -77,7 +77,6 @@ const postTweets = function() {
         data: $("form").serialize()
       })
         .then(() => {
-          $(".error-message").slideUp();
           loadTweets();
           $("form").trigger("reset");
           $(".counter").text(140);
