@@ -36,7 +36,7 @@ const createTweetElement = (obj) => {
       <h5 class="head-username">${escape(obj.user.handle)}</h5>
     </header>
     <div class="tweet-text">
-      <h4>${escape(obj.content.text)}</h4>
+      <p>${escape(obj.content.text)}</p>
     </div>
     <footer>
       <span>${escape(timestamp(obj.created_at))}</span>
@@ -99,15 +99,10 @@ const loadTweets = function() {
     });
 };
 
-// handler on button to scroll to top of page
-$("#scroll-top").on("click", function() {
-  $(window).scrollTop(0);
-});
-
 // hide/show scroll button
 $(document).scroll(function() {
   let y = $(this).scrollTop();
-  if (y > 400) {
+  if (y > 300) {
     $("#scroll-top").fadeIn();
     $("nav").fadeOut();
   } else {
@@ -125,6 +120,11 @@ $(document).ready(function() {
     });
   });
   
+  // handler on button to scroll to top of page
+  $("#scroll-top").on("click", function() {
+    $(window).scrollTop(0);
+  });
+
   $("form").hide();
   postTweets();
   loadTweets();

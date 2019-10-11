@@ -48,8 +48,8 @@ article header {
   margin-top: 20px;
 }
 
-.tweet-text h4 {
-  margin-left: 20px;
+.tweet-text {
+  overflow-wrap: break-word;
 }
 
 #tweets-container footer {
