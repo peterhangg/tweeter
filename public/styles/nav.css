@@ -41,3 +41,13 @@
 #arrow-icon:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 480px) {
+  #nav-bar {
+    padding: 1em;
+    font-size: 25px;
+  }
+  .write-tweet {
+    font-size: 20px
+  }
+}
